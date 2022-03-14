@@ -60,11 +60,14 @@
       "text": ""
     }
   ],
-  "medicalNotes": [
-    {
-      "author": ObjectId('from user'),
-      "date": Date(),
-      "text": ""
-    }
-  ]
+  "medical": {
+    "mobility": true,
+    "notes": [
+      {
+        "author": ObjectId('from user'),
+        "date": Date(),
+        "text": ""
+      }
+    ]
+  }
 }
