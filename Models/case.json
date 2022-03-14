@@ -21,16 +21,28 @@
   "numberOfAdults": 2,
   "numberOfMinors": 2,
   "numberOfPets": 2,
-  "lastKnownLocation": {
+  "currentLocation": {
     "city": "",
     "geo": {
       "type": "Point",
       "coordinates": []
     }
   },
-  "currentCity": "",
-  "region": "",
-  "country": "",
+  "originatingLocation": {
+    "city": "",
+    "geo": {
+      "type": "Point",
+      "coordinates": []
+    }
+  },
+  "destinationLocation": {
+    "city": "",
+    "geo": {
+      "type": "Point",
+      "coordinates": []
+    }
+  },
+ 
   "caseManager": [
     {
       "volunteer": ObjectId('from user'),
