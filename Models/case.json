@@ -1,0 +1,34 @@
+{
+  "status": "completed",
+  "caseNumber": "123123123",
+  "refugeeName": "name",
+  "contact":  { 
+    "value": "+11231231233",
+    "type": "phone"
+  },
+  "numberOfAdults": 2,
+  "numberOfMinors": 2,
+  "numberOfPets": 2,
+  "lastKnownLocation": {
+
+  },
+  "currentCity": "",
+  "region": "",
+  "country": "",
+  "caseManager": [
+    {
+      "volunteer": "",
+      "active": true,
+      "dateAssigned": Date()
+    }
+  ],
+  "requestTimestamp": Date(),
+  "zone": "red | orange | yellow | green | green",
+  "notes": [
+    {
+      "author": "",
+      "date": Date(),
+      "text": ""
+    }
+  ]
+}
