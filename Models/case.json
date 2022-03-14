@@ -1,6 +1,7 @@
 {
   "status": "completed",
   "caseNumber": "123123123",
+  "resourcesNeeded": [ "Animals", "Legal" ], // resource catgories
   "refugeeName": "name",
   "refugeeContact": [
     {
@@ -53,6 +54,13 @@
   "dateCreated": Date(),
   "zone": "red | orange | yellow | green",
   "notes": [
+    {
+      "author": ObjectId('from user'),
+      "date": Date(),
+      "text": ""
+    }
+  ],
+  "medicalNotes": [
     {
       "author": ObjectId('from user'),
       "date": Date(),
