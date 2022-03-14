@@ -1,0 +1,12 @@
+{
+  "name": "name",
+  "type": "volunteer | refugee",
+  "specialCases": ["lgbt", "disabilities"],
+  "contact": [
+    { 
+      "value": "+11231231233",
+      "type": "phone",
+      "primary": true 
+    }
+  ]
+}
