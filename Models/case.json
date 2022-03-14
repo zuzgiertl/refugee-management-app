@@ -2,31 +2,47 @@
   "status": "completed",
   "caseNumber": "123123123",
   "refugeeName": "name",
-  "contact":  { 
-    "value": "+11231231233",
-    "type": "phone"
-  },
+  "refugeeContact": [
+    {
+      "value": "+11231231233",
+      "type": [
+        "phone",
+        "whatsApp"
+      ],
+      "email": "volunteer@url.com",
+      "social": [
+        {
+          "value": "@handle",
+          "platform": "twitter"
+        }
+      ]
+    }
+  ],
   "numberOfAdults": 2,
   "numberOfMinors": 2,
   "numberOfPets": 2,
   "lastKnownLocation": {
-
+    "city": "",
+    "geo": {
+      "type": "Point",
+      "coordinates": []
+    }
   },
   "currentCity": "",
   "region": "",
   "country": "",
   "caseManager": [
     {
-      "volunteer": "",
+      "volunteer": ObjectId('from user'),
       "active": true,
       "dateAssigned": Date()
     }
   ],
-  "requestTimestamp": Date(),
-  "zone": "red | orange | yellow | green | green",
+  "dateCreated": Date(),
+  "zone": "red | orange | yellow | green",
   "notes": [
     {
-      "author": "",
+      "author": ObjectId('from user'),
       "date": Date(),
       "text": ""
     }

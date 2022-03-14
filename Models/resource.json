@@ -6,5 +6,10 @@
   "phoneNumber": "+123124124324",
   "additionalDetails":  "additionalDetails",
   "dateAdded": Date(),
-  "verified": true
+  "dateVerified": Date(),
+  "verified": true,
+  "reputation": {
+    "clicks": 10,
+    "likes": 8
+  } 
 }

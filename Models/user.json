@@ -1,12 +1,17 @@
 {
   "name": "name",
-  "type": "volunteer | refugee",
-  "specialCases": ["lgbt", "disabilities"],
+  "type": "volunteer | admin",
+  "specialCases": ["lgbtqi", "disabilities"],
+  "languages": [ "russian", "slovak"], 
   "contact": [
     { 
       "value": "+11231231233",
-      "type": "phone",
-      "primary": true 
+      "type": ["phone", "whatsApp"],
+      "email": "volunteer@url.com",
+      "social": [{
+        "value": "@handle",
+        "platform": "twitter"
+      }]
     }
   ]
 }
