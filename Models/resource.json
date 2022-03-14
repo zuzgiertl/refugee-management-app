@@ -1,0 +1,10 @@
+{
+  "stoplight": "red | yellow | green",
+  "category": "Animals",
+  "subCategory": "Pet store",
+  "website": "www.url.com",
+  "phoneNumber": "+123124124324",
+  "additionalDetails":  "additionalDetails",
+  "dateAdded": Date(),
+  "verified": true
+}
