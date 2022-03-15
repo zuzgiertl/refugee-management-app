@@ -2,6 +2,7 @@
   "status": "completed",
   "caseNumber": "123123123",
   "resourcesNeeded": [ "Animals", "Legal" ], // resource catgories
+  "specialCases": ["lgbtqi", "pregnant", "disabled", "jewishCommunity", "orphan", "singleMother", "surrogateBaby", "elderly"],
   "refugeeName": "name",
   "refugeeContact": [
     {
