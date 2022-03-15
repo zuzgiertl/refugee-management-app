@@ -1,4 +1,4 @@
-from Models.Case import Resource
+from Models.Resource import Resource
 from flask import Blueprint, request
 
 
