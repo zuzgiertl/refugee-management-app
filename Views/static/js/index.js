@@ -1,20 +1,25 @@
 function autocomplete() {
-  $('#case-search-input').keyup(function() {
+  let input = $('#case-search-input')
+  input.keyup(function() {
     var letters = $(this).val();
+    serve(letters)
+  });
+
+  if (input.val.length > 0){
+    serve(input.val())
+  }
+
+  function serve(letters){
     $.ajax({
         url: `/api/case/search?query=${letters}`
       }).done(function(results) {
-        // console.log(results)
-        // var jsonResults = JSON.parse(results).docs
-        // console.log(jsonResults)
         console.log(results)
         render(letters, results)
       })
       .fail(function(err) {
         console.log(err)
       });
-
-  });
+  }
 }
 
 
@@ -54,18 +59,17 @@ function render(letters, results) {
                 <p> <i class="fas fa-map-marker-alt"></i> ${item.destinationLocation.city}</p>
               </div>
               <div class="location">
-                <p> <i class="far fa-clock"></i> ${item.status}</p>
+                <p> placeholder </p>
               </div>
             </div>
           </div>
         </div>
         <div class="jobs_right">
           <div class="apply_now">
-            <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a>
-            <a href="job_details.html" class="boxed-btn3">Work on Case</a>
+            <a href="#" class="boxed-btn3">${item.status}</a>
           </div>
           <div class="date">
-            <p>Date Created ${item.dateCreated.$date}</p>
+            <p>${item.dateCreated.$date}</p>
           </div>
         </div>
       </div>
