@@ -1,5 +1,4 @@
 from Utilities.Database import conn
-from bson import json_util
 from flask import jsonify
 
 class Case:
@@ -15,8 +14,9 @@ class Case:
                         'path': {'wildcard':'*'}
                     }
                 }
+            },
+            {
+                '$limit':15
             }
         ]
-        docs = list(self.collection.aggregate(pipe))
-        json_result = json_util.dumps({'docs': docs}, json_options=json_util.RELAXED_JSON_OPTIONS)
-        return jsonify(json_result)
+        return list(self.collection.aggregate(pipe))
