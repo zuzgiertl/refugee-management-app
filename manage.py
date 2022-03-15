@@ -1,6 +1,6 @@
 from flask import Flask
 from config import session_key, app_config
-from Controllers import PageRoutes
+from Controllers import PageRoutes, CaseRoutes
 import os
 
 
@@ -15,7 +15,8 @@ app.config['JSON_SORT_KEYS'] = False
 
 # blueprints init
 blueprints = [
-    PageRoutes.mod
+    PageRoutes.mod,
+    CaseRoutes.mod
 ]
 for bp in blueprints:
     app.register_blueprint(bp)

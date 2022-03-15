@@ -1,56 +1,26 @@
 {% extends "layout.html" %}
 {% block body %}
-<div class="slider-area gray-bg position-relative">
+<div class="slider-area position-relative">
     <div class="single-slider d-flex align-items-center slider-height2">
       <div class="container">
         <div class="row">
           <div class="col-xl-12">
             <div class="single_field">
-              <input type="text" placeholder="Search keyword" class="">
+              <input id="case-search-input" type="text" placeholder="Search keyword" class="">
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+
   <div class="job_listing_area section-bg2 plus_padding">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="job_lists m-0">
-            <div class="row">
-              <div class="col-lg-12 col-md-12">
-                <div class="single_jobs white-bg d-flex justify-content-between">
-                  <div class="jobs_left d-flex align-items-center">
-                    <div class="thumb">
-                      <img src="../static/img/icon/1.svg" alt="">
-                    </div>
-                    <div class="jobs_conetent">
-                      <a href="#">
-                        <h4>John Smith</h4>
-                      </a>
-                      <div class="links_locat d-flex align-items-center">
-                        <div class="location">
-                          <p> <i class="fas fa-map-marker-alt"></i> New York, USA</p>
-                        </div>
-                        <div class="location">
-                          <p> <i class="far fa-clock"></i> In Progress</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="jobs_right">
-                    <div class="apply_now">
-                      <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a>
-                      <a href="job_details.html" class="boxed-btn3">Work on Case</a>
-                    </div>
-                    <div class="date">
-                      <p>Last Updated: 31 Jan 2020</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="row case-list-placeholder">
+
             </div>
             <div class="row">
               <div class="col-lg-12">
@@ -69,5 +39,6 @@
     </div>
   </div>
 
-{% endblock %}
+  <script src="../static/js/index.js"></script>
 
+{% endblock %}

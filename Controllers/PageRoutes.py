@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, make_response, redirect
+from config import realm_api_key
 import requests
 import json
 
@@ -15,25 +16,27 @@ def build():
     # TODO: check if Google auth token is valid
     return render_template("build.html")
 
-@mod.route('/<id>')
-def findCase (id):
+
+@mod.route('/case/<id>')
+def find_case(id):
 
     url = "https://data.mongodb-api.com/app/data-luhnp/endpoint/data/beta/action/find"
 
     payload = json.dumps({
-    "dataSource": "crisis-management-app",
-    "database": "cma",
-    "collection": "cases",
-    "filter": {
-        "caseNumber": id
-    }
+        "dataSource": "crisis-management-app",
+        "database": "cma",
+        "collection": "cases",
+        "filter": {
+            "caseNumber": id
+        }
     })
     headers = {
-    'api-key': '62V3AOyla74WEYTUd8gjaLOx5v2BRg7DjrueGNtQLiJXjFDib7BJHtRaR5RPmjRC',
-    'Content-Type': 'application/json'
+        'api-key': realm_api_key,
+        'Content-Type': 'application/json'
     }
-
+    # send the request to realm server
     response = requests.request("POST", url, headers=headers, data=payload)
-    case = response.json()["documents"][0]
+    #single case find one
+    single_case = response.json()["documents"][0]
 
-    return render_template("caseModal.html", case=case)
+    return render_template("caseModal.html", case=single_case)
