@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<div class="job_listing_area section-bg2 plus_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="job_lists m-0">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8">
+                            <h4>Refugee Information</h4>
+
+                            <div class="single_jobs white-bg  justify-content-between">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="jobs_left d-flex align-items-left">
+
+                                            <div class="" style="padding:10px">
+                                                <h4>{{case.refugeeName}}</h4>
+                                                    <div class="location">
+                                                        <p> <i class="fas fa-map-marker-alt"></i>
+                                                            {{case.currentLocation.city}}</p>
+                                                    </div>
+                                                    <div class="">
+                                                        <label>Destination: </label>
+                                                        {{case.destinationLocation.city}}
+                                                    </div>
+                                                    <div class="">
+                                                        <label>Origin: </label>
+                                                        {{case.originatingLocation.city}}
+                                                    </div>
+                                                    <div class="">
+                                                        <label>Zone: </label>
+                                                        {{case.zone}}
+                                                    </div>
+                                                    <br>
+                                                    <h5>Contact Information</h5>
+                                                    <hr />
+                                                    {% for contact in case.refugeeContact %}
+
+                                                    <div class="">
+                                                        <label>Email: </label>
+                                                        {{contact.email}}
+                                                    </div>
+                                                    <div class="">
+                                                        <label>Phone: </label>
+                                                        {{contact.value}}
+                                                    </div>
+                                                    <div class="">
+
+                                                    {% for social in contact.social %}
+                                                    <label>{{social.platform}} </label>
+                                                    {{social.value}}
+                                                    {% endfor %}
+                                                    {% endfor %}
+
+</div>
+                                                    <br>
+                                                    <h5>Personal Information</h5>
+                                                    <hr />
+                                                    <div class="">
+                                                        <label>Adults: </label>
+                                                        {{case.numberOfAdults}}
+                                                    </div>
+                                                    <div class="">
+                                                        <label>Children: </label>
+                                                        {{case.numberOfMinors}}
+                                                    </div>
+                                                    <div class="">
+                                                        <label>Pets: </label>
+                                                        {{case.numberOfPets}}
+                                                    </div>
+                                                    <div class="">
+                                                        <label>Needs: </label>
+                                                        {% for need in case.specialCases %}
+
+                                                        <button style="padding:5px" class="btn btn-outline-primary btn-sm">{{need}} </button> 
+                                                        {% endfor %}
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <div class="col-lg-4">
+                                        <h5>Resources Required</h5>
+
+                                        {% for resource in case.resourcesNeeded %}
+
+                                        <button style="padding:10px" class="btn btn-outline-primary btn-sm">{{resource}} </button> 
+                                        {% endfor %}
+                                        <div class="dropdown show">
+                                            <a style="padding:10px; margin-top:10px" class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                              Add Resource
+                                            </a>
+                                          
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                              <a class="dropdown-item" href="#">Action</a>
+                                              <a class="dropdown-item" href="#">Another action</a>
+                                              <a class="dropdown-item" href="#">Something else here</a>
+                                            </div>
+                                          </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <h4>Case Information</h4>
+
+                            <div class=" white-bg  justify-content-between">
+                                <div style="padding:15px">
+                                    <div class="">
+                                        <div class="">
+                                            <a href="" class="boxed-btn3">{{case.status}}</a>
+                                        </div>
+                                        <br />
+                                        <div class="date">
+                                            <label>Last Updated </label>
+                                            <p>{{case.notes[0].date}}</p>
+                                        </div>
+                                        <div class="case_workers">
+                                            {% for worker in case.caseManager %}
+                                            <label>Case Manager </label>
+
+                                            <p>{{ worker.volunteer }}</p>
+                                            <p>{{ worker.active }}</p>
+                                            <p>{{ worker.dateAssigned }}</p>
+
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+
+                            <h4>Resources</h4>
+                            <div class="white-bg">
+                                <div>
+                                    Some Resource
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

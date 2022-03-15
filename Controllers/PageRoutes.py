@@ -39,4 +39,4 @@ def find_case(id):
     #single case find one
     single_case = response.json()["documents"][0]
 
-    return render_template("caseModal.html", case=single_case)
+    return render_template("case.html", case=single_case)
