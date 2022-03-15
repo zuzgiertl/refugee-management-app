@@ -1,26 +1,16 @@
 {% extends "layout.html" %}
 {% block body %}
-<div class="slider-area gray-bg position-relative">
-    <div class="single-slider d-flex align-items-center slider-height2">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-12">
-            <div class="single_field">
-              <input type="text" placeholder="Search keyword" class="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="job_listing_area section-bg2 plus_padding">
+
+
+<div class="job_listing_area section-bg2 plus_padding">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="job_lists m-0">
             <div class="row">
-              <div class="col-lg-12 col-md-12">
+              <div class="col-lg-8 col-md-8">
+                <h4>Refugee Information</h4>
+
                 <div class="single_jobs white-bg d-flex justify-content-between">
                   <div class="jobs_left d-flex align-items-center">
                     <div class="thumb">
@@ -28,7 +18,7 @@
                     </div>
                     <div class="jobs_conetent">
                       <a href="#">
-                        <h4>John Smith</h4>
+                        <h4>{{case.refugeeName}}</h4>
                       </a>
                       <div class="links_locat d-flex align-items-center">
                         <div class="location">
@@ -40,34 +30,37 @@
                       </div>
                     </div>
                   </div>
+
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4">
+                  <h4>Case Information</h4>
                   <div class="jobs_right">
                     <div class="apply_now">
-                      <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a>
-                      <a href="job_details.html" class="boxed-btn3">Work on Case</a>
+                      <a href="" class="boxed-btn3">{{case.status}}</a>
                     </div>
+                    <br/>
                     <div class="date">
-                      <p>Last Updated: 31 Jan 2020</p>
+                        <label>Last Updated: </label>
+                      <p>{{case.notes[0].date}}</p>
+                    </div>
+                    <div class="case_workers">
+                        {% for worker in case.caseManager %}
+                        <label>Case Manager: </label>
+
+                        <p>{{ worker.volunteer }}</p>
+                        <p>{{ worker.active }}</p>
+                        <p>{{ worker.dateAssigned }}</p>
+
+                    {% endfor %} 
+
                     </div>
                   </div>
-                </div>
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-12">
-                <div class="pagination_wrap">
-                  <ul>
-                    <li><a href="#"> <i class="ti-angle-left"></i> </a></li>
-                    <li><a href="#"><span>01</span></a></li>
-                    <li><a href="#"> <i class="ti-angle-right"></i> </a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+                <div class="col-lg-12 col-md-12">
+                    <h4>Resources</h4>
 
+                    </div></div>
 {% endblock %}
-
