@@ -61,7 +61,7 @@
     }
   ],
   "medical": {
-    "mobility": true,
+    "isMobile": true,
     "notes": [
       {
         "author": ObjectId('from user'),
