@@ -1,2 +1,5 @@
-./Controllers/__pycache__/*
-./Models/__pycache__/*
+Controllers/__pycache__/*
+Models/__pycache__/*
+Datagen/node_modules
+__pycache__/*
+Datagen/package-lock.json

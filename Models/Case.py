@@ -3,16 +3,17 @@ from flask import jsonify
 
 class Case:
     def __init__(self):
-        self.collection = conn['cma']['cases']
+        self.collection = conn['csa']['cases']
 
     def search(self, query):
         pipe = [
             {
                 '$search': {
+                    'index': 'cases',
                     'text': {
                         'query': query,
-                        'path': {'wildcard':'*'},
-                        'synonyms': 'cmaSynonyms'
+                        'path': {'wildcard':'*'}
+                        # 'synonyms': 'cmaSynonyms'
                     }
                 }
             },

@@ -25,11 +25,11 @@ def build():
 @mod.route('/case/<id>')
 def find_case(id):
 
-    url = "https://data.mongodb-api.com/app/data-luhnp/endpoint/data/beta/action/find"
+    url = "https://data.mongodb-api.com/app/data-woeun/endpoint/data/beta/action/find"
 
     payload = json.dumps({
-        "dataSource": "crisis-management-app",
-        "database": "cma",
+        "dataSource": "Cluster0",
+        "database": "csa",
         "collection": "cases",
         "filter": {
             "caseNumber": id

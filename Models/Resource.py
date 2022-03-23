@@ -4,12 +4,13 @@ from flask import jsonify
 
 class Resource:
     def __init__(self):
-        self.collection = conn['cma']['resources']
+        self.collection = conn['csa']['resources']
 
     def search(self, query):
         pipe = [
             {
                 '$search': {
+                    'index': 'resources',
                     'text': {
                         'query': query,
                         'path': {'wildcard':'*'}                    }
