@@ -12,11 +12,12 @@ class Resource:
                 '$search': {
                     'text': {
                         'query': query,
-                        'path': {'wildcard':'*'}
-                    }
+                        'path': {'wildcard':'*'}                    }
                 }
             }
         ]
         docs = list(self.collection.aggregate(pipe))
         json_result = json_util.dumps({'docs': docs}, json_options=json_util.RELAXED_JSON_OPTIONS)
         return jsonify(json_result)
+
+

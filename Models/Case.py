@@ -11,7 +11,8 @@ class Case:
                 '$search': {
                     'text': {
                         'query': query,
-                        'path': {'wildcard':'*'}
+                        'path': {'wildcard':'*'},
+                        'synonyms': 'cmaSynonyms'
                     }
                 }
             },

@@ -10,6 +10,11 @@ mod = Blueprint('page_routes', __name__)
 def home():
     return render_template("index.html")
 
+@mod.route('/admin')
+def admin():
+    return render_template("admin.html")
+
+
 
 @mod.route('/build')
 def build():
